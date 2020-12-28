@@ -1,0 +1,15 @@
+#transactions {
+  width: 80vw;
+  align-self: center;
+  margin-left: 10vw;
+  margin-top: 3vh;
+  min-height: 80vh;
+  height: 80vh;
+  display: flex;
+}
+.negative {
+  color: red;
+}
+.positive {
+  color: green;
+}

@@ -1,0 +1,16 @@
+#operations {
+  margin-top: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#operations * {
+  margin-left: 0.3vw;
+  margin-right: 0.3vw;
+}
+.success-bar .MuiSnackbarContent-root {
+  background-color: #2a9d8f;
+}
+.fail-bar .MuiSnackbarContent-root {
+  background-color: #e76f51;
+}

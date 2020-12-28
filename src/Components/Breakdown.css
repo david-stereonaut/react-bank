@@ -1,0 +1,15 @@
+.MuiAccordionSummary-content {
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+}
+
+#breakdown {
+    width: 60vw;
+    margin-left: 20vw;
+    margin-top: 3vh;
+    min-width: 100px;
+}
