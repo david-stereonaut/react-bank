@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 const ROUTE = process.env.ROUTE_URL
 console.log(ROUTE)
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -50,24 +51,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const data = await axios.get(ROUTE+'/transactions')
+    const data = await axios.get(`${ROUTE}/transactions`)
     this.handleData(data)
   }
 
   deleteTransaction = async id => {
-    const data = await axios.delete(ROUTE+'/transaction', { data: { id } })
+    const data = await axios.delete(`${ROUTE}/transaction`, { data: { id } })
     this.handleData(data)
   }
 
   deposit = async transaction => {
     transaction.amount = Math.abs(transaction.amount)
-    const data = await axios.post(ROUTE+'/transaction', transaction)
+    const data = await axios.post(`${ROUTE}/transaction`, transaction)
     this.handleData(data)
   }
 
   withdraw = async transaction => {
     transaction.amount = -Math.abs(transaction.amount)
-    const data = await axios.post(ROUTE+'/transaction', transaction)
+    const data = await axios.post(`${ROUTE}/transaction`, transaction)
     this.handleData(data)
   }
 
