@@ -18,4 +18,8 @@
   #operations {
     flex-direction: column;
   }
+  #operations * {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+  }
 }
