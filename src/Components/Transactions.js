@@ -69,28 +69,23 @@ class Transactions extends Component {
                         columns={[{ field: 'id', hide: true },
                             {
                                 field: 'date',
-                                flex: 1,
                                 headerName: 'Date',
                             }, { 
                                 field: 'amount',
                                 headerName: 'Amount',
-                                flex: 1,
                                 cellClassName: (params) => {
                                     return params.value >=0 ? 'positive' : 'negative'
                                 }
                             }, {
                                 field: 'vendor',
-                                flex: 1,
                                 headerName: 'Vendor',
                             }, {
                                 field: 'category',
-                                flex: 1,
                                 headerName: 'Category',
                             }, {
                                 field: '_id',
                                 headerName: 'Delete',
                                 disableClickEventBubbling: true,
-                                flex: 1,
                                 renderCell: (params) => (
                                     <Button
                                     color="secondary"

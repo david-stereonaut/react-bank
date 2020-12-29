@@ -14,3 +14,8 @@
 .fail-bar .MuiSnackbarContent-root {
   background-color: #e76f51;
 }
+@media only screen and (max-width: 768px) {
+  #operations {
+    flex-direction: column;
+  }
+}

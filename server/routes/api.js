@@ -13,7 +13,10 @@ router.get('/transactions', async function(req, res) {
 
 router.post('/transaction', async function(req, res) {
     try {
-        const newTransaction = new TransactionModel(req.body)
+        const toSave = {...req.body,
+        vendor: req.body.vendor[0].toUpperCase()+req.body.vendor.slice(1),
+        cetegory: req.body.category[0].toUpperCase()+req.body.category.slice(1)}
+        const newTransaction = new TransactionModel(toSave)
         await newTransaction.save()
         const data = await TransactionModel.find({}).sort('-date')
         res.send(data)
