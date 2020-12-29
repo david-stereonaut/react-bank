@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const ROUTE = process.env.ROUTE_URL
 console.log(ROUTE)
-
+console.log(process.env.MONGODB_URI)
 
 const theme = createMuiTheme({
   palette: {
