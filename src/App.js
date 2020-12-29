@@ -10,8 +10,11 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Navbar from './Components/Navbar';
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
+} else {
+  console.log('production')
 }
 const ROUTE = process.env.ROUTE_URL
+console.log(ROUTE)
 
 const theme = createMuiTheme({
   palette: {
