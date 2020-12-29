@@ -69,6 +69,7 @@ class Transactions extends Component {
                         columns={[{ field: 'id', hide: true },
                             {
                                 field: 'date',
+                                width: 150,
                                 headerName: 'Date',
                             }, { 
                                 field: 'amount',
@@ -78,6 +79,7 @@ class Transactions extends Component {
                                 }
                             }, {
                                 field: 'vendor',
+                                width: 200,
                                 headerName: 'Vendor',
                             }, {
                                 field: 'category',
