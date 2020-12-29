@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "elevation-pr": "^2.1.0",
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "mongoose": "^5.11.8",
@@ -28,7 +29,8 @@
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "review": "node node_modules/elevation-pr/index.js"
   },
   "eslintConfig": {
     "extends": [
