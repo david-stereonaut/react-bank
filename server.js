@@ -2,9 +2,6 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const mongoose = require('mongoose')
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
 
 const api = require('./server/routes/api')
 app.use(express.static(path.join(__dirname, 'build')));

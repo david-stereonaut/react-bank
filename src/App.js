@@ -8,14 +8,6 @@ import Breakdown from './Components/Breakdown';
 import React from 'react'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Navbar from './Components/Navbar';
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-} else {
-  console.log('production')
-}
-const ROUTE = process.env.ROUTE_URL
-console.log(ROUTE)
-console.log(process.env.MONGODB_URI)
 
 const theme = createMuiTheme({
   palette: {
@@ -51,24 +43,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const data = await axios.get(`${ROUTE}/transactions`)
+    const data = await axios.get(`/transactions`)
     this.handleData(data)
   }
 
   deleteTransaction = async id => {
-    const data = await axios.delete(`${ROUTE}/transaction`, { data: { id } })
+    const data = await axios.delete(`/transaction`, { data: { id } })
     this.handleData(data)
   }
 
   deposit = async transaction => {
     transaction.amount = Math.abs(transaction.amount)
-    const data = await axios.post(`${ROUTE}/transaction`, transaction)
+    const data = await axios.post(`/transaction`, transaction)
     this.handleData(data)
   }
 
   withdraw = async transaction => {
     transaction.amount = -Math.abs(transaction.amount)
-    const data = await axios.post(`${ROUTE}/transaction`, transaction)
+    const data = await axios.post(`/transaction`, transaction)
     this.handleData(data)
   }
 
