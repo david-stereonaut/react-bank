@@ -20,4 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  #operations .MuiBox-root {
+    margin: 0.5vh;
+  }
 }
