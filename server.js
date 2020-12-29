@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use('/', api)
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react-bank")
-const port = 3000
+const port = 3001
 app.listen((process.env.PORT || port), function() {
     console.log(`Server running on port ${port}`)
 })

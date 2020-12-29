@@ -3,6 +3,7 @@ import { Component } from "react";
 import './Operations.css'
 import React from 'react'
 import CloseIcon from '@material-ui/icons/Close'
+import moment from 'moment'
 
 class Operations extends Component {
 
@@ -12,6 +13,7 @@ class Operations extends Component {
             amountInput: '',
             vendorInput: '',
             categoryInput: '',
+            dateInput: moment().format('YYYY-MM-DD'),
             showSuccess: false,
             showNotEnough: false,
             showProblem: false
@@ -26,6 +28,10 @@ class Operations extends Component {
             [name]: value
         });
     }
+
+    isValidDate(d) {
+        return d instanceof Date && !isNaN(d);
+    }
     
     deposit = () => {
         if (!this.state.amountInput ||
@@ -38,12 +44,14 @@ class Operations extends Component {
             this.props.deposit({
                 amount: this.state.amountInput,
                 vendor: this.state.vendorInput,
-                category: this.state.categoryInput
+                category: this.state.categoryInput,
+                date: this.state.dateInput
             })
             this.setState({
                 amountInput: '',
                 vendorInput: '',
                 categoryInput: '',
+                dateInput: moment().format('YYYY-MM-DD'),
                 showSuccess: true
             })
         }
@@ -64,12 +72,14 @@ class Operations extends Component {
             this.props.withdraw({
                 amount: this.state.amountInput,
                 vendor: this.state.vendorInput,
-                category: this.state.categoryInput
+                category: this.state.categoryInput,
+                date: this.state.dateInput
             })
             this.setState({
                 amountInput: '',
                 vendorInput: '',
                 categoryInput: '',
+                dateInput: moment().format('YYYY-MM-DD'),
                 showSuccess: true
             })
         }
@@ -94,6 +104,9 @@ class Operations extends Component {
                 </Box>
                 <Box component="div" display="inline">
                     <TextField size="small" type="text" value={this.state.categoryInput} name="categoryInput" onChange={this.handleInputChange} label="Category" />
+                </Box>
+                <Box component="div" display="inline">
+                    <TextField size="small" type="date" value={this.state.dateInput} name="dateInput" onChange={this.handleInputChange} label="Date" />
                 </Box>
                 <Box component="div" display="inline">
                     <Button variant="contained" color="secondary" onClick={this.withdraw}>Withdraw</Button>

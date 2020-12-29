@@ -12,10 +12,10 @@ import Navbar from './Components/Navbar';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#e9c46a'
+      main: '#2a9d8f'
     },
     secondary: {
-      main: "#2a9d8f"
+      main: "#695958"
     }
   }
 })
@@ -43,24 +43,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const data = await axios.get('http://localhost:3000/transactions')
+    const data = await axios.get('http://localhost:3001/transactions')
     this.handleData(data)
   }
 
   deleteTransaction = async id => {
-    const data = await axios.delete('http://localhost:3000/transaction', { data: { id } })
+    const data = await axios.delete('http://localhost:3001/transaction', { data: { id } })
     this.handleData(data)
   }
 
   deposit = async transaction => {
     transaction.amount = Math.abs(transaction.amount)
-    const data = await axios.post('http://localhost:3000/transaction', transaction)
+    const data = await axios.post('http://localhost:3001/transaction', transaction)
     this.handleData(data)
   }
 
   withdraw = async transaction => {
     transaction.amount = -Math.abs(transaction.amount)
-    const data = await axios.post('http://localhost:3000/transaction', transaction)
+    const data = await axios.post('http://localhost:3001/transaction', transaction)
     this.handleData(data)
   }
 
@@ -71,7 +71,6 @@ class App extends Component {
   }
 
   render() {
-    const balanceColor = this.state.balance >= 500 ? 'green' : 'red'
     return (
       <Router>
         <ThemeProvider theme={theme}>
