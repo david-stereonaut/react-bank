@@ -1,0 +1,33 @@
+#operations {
+    margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    * {
+        margin-left: 0.3vw;
+        margin-right: 0.3vw;
+    }
+}
+
+.success-bar {
+    .MuiSnackbarContent-root {
+        background-color: #2a9d8f;
+    }
+}
+
+.fail-bar {
+    .MuiSnackbarContent-root {
+        background-color: #e76f51;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #operations {
+        .MuiBox-root{
+            margin: 0.5vh;
+        }
+        margin-top: 15vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
